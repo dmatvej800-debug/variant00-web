@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Форма — Техника дома · V09</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1D4ED8">
+  <script src="form.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>Техника дома · V09</p>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Заявка на технику</h1>
+    <p>Учебная форма. Данные пока не сохраняются.</p>
+
+    <form class="request-form" method="get">
+      <p class="form-field">
+        <label for="item">Товар</label>
+        <select id="item" name="item" required>
+          <option value="">Выберите из списка</option>
+          <option value="microwave">Микроволновая печь</option>
+          <option value="washer">Стиральная машина</option>
+          <option value="vacuum">Пылесос</option>
+        </select>
+      </p>
+
+      <p class="form-field">
+        <label for="quantity">Количество единиц</label>
+        <input id="quantity" name="quantity" type="number"
+               min="1" step="1" value="1" required>
+      </p>
+
+      <p class="form-field">
+        <label for="notes">Комментарий к заказу</label>
+        <textarea id="notes" name="notes" rows="4"
+                  placeholder="Например, удобный день доставки"></textarea>
+      </p>
+
+      <p>
+        <input id="extra1" name="extra1" type="checkbox" value="yes" checked>
+        <label for="extra1">Нужна доставка</label>
+      </p>
+
+      <p>
+        <input id="extra2" name="extra2" type="checkbox" value="yes">
+        <label for="extra2">Нужна установка</label>
+      </p>
+
+      <p class="form-field">
+        <label for="level">Срочность заказа</label>
+        <input id="level" name="level" type="range"
+               min="1" max="5" step="1" value="3">
+        <span>1 — Не срочно; 5 — Срочно</span>
+      </p>
+
+      <button type="submit">Проверить заказ</button>
+      <p id="result" role="status" aria-live="polite"></p>
+    </form>
+
+    <p><a href="index.html">Назад</a></p>
+  </main>
+
+  <footer>
+    <p>Учебный прототип · Вариант 09</p>
+  </footer>
+</body>
+</html>
